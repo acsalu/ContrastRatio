@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+  head
+    title= "Contrast Ratio"
+    link(rel="stylesheet", href="./style/style.css")
+    script(src="./bower_components/jquery/dist/jquery.min.js")
+    script(src="./script/contrast-ratio.js")
+    script(src="./script/script.js")
+  body
+    header
+      .container
+        #header-color.contrast-title-color
+          .contrast-title Original Color
+          .float-wrapper
+            #header-title Contrast Ratio =
+            span.color-ratio 2.4
+            div
+              .semicircle-upper.color-foreground
+              .semicircle-lower.color-background
+        #header-gray
+          .contrast-title Grayscale Color
+          .float-wrapper
+            #header-title Contrast Ratio =
+            span.gray-ratio 2.4
+            div
+              .semicircle-upper.gray-foreground
+              .semicircle-lower.gray-background
+
+    #toggle-tools-btn Hide Tools
+
+    content
+      .container
+        #input-group
+          .color-input.float-wrapper
+            div Foreground Color:
+            .input-wrapper
+              input#input-foreground.hex-code-input(type="text", value="FFFFFF")
+            .circle.color-foreground
+          .color-input.float-wrapper
+            div Background Color:
+            .input-wrapper
+              input#input-background.hex-code-input(type="text", value="000000")
+            .circle.color-background
+
+
+      #preview.container
+        #summary
+          #summary-ratio.gray-ratio
+          #summary-text low readibility
+        textarea#text-preview 測試文字，文本內容可以編輯，背景大小可以隨意改變。
+        ul#fav-colors
+
+      .container
+        //- #ref-title Color Readability
+        canvas#canvas-ref

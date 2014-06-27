@@ -1,0 +1,207 @@
+circleRadius = 10px
+colorInputHeight = 2*(circleRadius)
+colorTitleColor = #878787
+
+*
+  font-family sans-serif
+
+body
+  margin 0 auto
+  background-color #fafafc
+
+
+header {
+
+  .contrast-title {
+    font-family HelveticaNeue-CondensedBold
+    font-size 15px
+  }
+
+  .contrast-title-color {
+    color colorTitleColor
+  }
+
+
+  #header-title {
+    font-size 20px
+  }
+}
+
+#toggle-tools-btn
+  position absolute
+  right 40px
+  top 60px
+  padding 10px
+  border 1px solid #CCC
+
+content {
+  padding-top 20px
+  display block
+}
+
+.container
+  display block
+  width 90%
+  margin 0px auto
+
+border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+linear-gradient()
+  -webkit-linear-gradient arguments
+  -moz-linear-gradient arguments
+  -o-linear-gradient arguments
+
+.circle
+  height (circleRadius)*2
+  width (circleRadius)*2
+  border-radius (circleRadius)
+
+.semicircle-upper
+  background-color black
+  height circleRadius
+  width circleRadius*2
+  border-radius circleRadius*2 circleRadius*2 0 0
+
+.semicircle-lower
+  background-color red
+  height circleRadius
+  width circleRadius*2
+  border-radius 0 0 circleRadius*2 circleRadius*2
+
+#content
+  margin-top 100px
+
+.col-md-4
+  height 60px
+  line-height 60px
+  text-align center
+  background red
+  color white
+
+.swatch
+  background yellow
+  width 100px
+  height 20px
+
+#foreground-color-swatch
+  background-color yellow
+  height 30
+
+#background-color-swatch
+  background-color green
+  height 30
+
+.child-float-left > *
+  float left
+
+.chile-float-left:after()
+  clear both
+
+
+
+.color-input-group {
+  height colorInputHeight
+  background white
+  border 0px
+
+  .color-input {
+    height colorInputHeight
+    line-height colorInputHeight
+    font-size 15px
+    text-align right
+    border 0px
+  }
+
+}
+
+colorInputHeight = 36px
+colorInputWidth = 150px
+ratioDividerHeight = 2px
+textInputOffset = 1px
+
+#input-group {
+  display block
+  // height colorInputHeight*2+ratioDividerHeight
+  // width colorInputWidth
+  padding 4px
+  .color-input {
+    // display inline-block
+    height colorInputHeight
+    padding-top 4px
+  }
+
+  .input-wrapper {
+
+    height colorInputHeight
+    border-bottom 1px solid black
+
+    .hex-code-input {
+      border none
+      text-align right
+      font-family monospace
+      font-size 1.2em
+    }
+  }
+}
+
+
+
+.float-wrapper
+  // display inline-block
+  width fit-content
+  height fit-content
+
+.float-wrapper > *
+  float left
+
+.float-wrapper:after()
+  clear both
+
+#color-input
+  display inline-block
+
+#summary {
+  // display inline-block
+  // margin 0 auto
+  div {
+    text-align center
+  }
+}
+
+#preview {
+
+  * {
+    display block
+  }
+
+  #summary-ratio {
+    font-size 1.5em
+  }
+
+  #summary-text {
+    margin-top 5px
+    color #8a8a8a
+  }
+
+  #text-preview {
+    border 0px
+    padding 10px 15px 15px 10px
+    height 60px
+    width 240px
+    background #CACACA
+    color red
+    display block
+    margin 0 auto
+    margin-top 20px
+    font-size 18px
+    resize horizontal
+  }
+}
+
+#contrast-ruler
+  width 100%
+  height 100px
+  background linear-gradient left #ffffff 0% #000000 100%
