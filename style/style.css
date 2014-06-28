@@ -39,6 +39,8 @@ header #header-gray .color {
   top: 60px;
   padding: 10px;
   border: 1px solid #ccc;
+  width: 100px;
+  text-align: center;
 }
 content {
   padding-top: 20px;
@@ -173,6 +175,10 @@ content {
   width: 100%;
   height: 100px;
   background: linear-gradient left #fff 0% #000 100%;
+}
+#rulers .ruler-title {
+  font-family: HelveticaNeue-Medium;
+  font-size: 15px;
 }
 #rulers .ruler {
   margin: 10px 0 10px 0;

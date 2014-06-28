@@ -1,4 +1,4 @@
-
+var isToolsShown = true;
 
 $(function() {
 
@@ -15,6 +15,7 @@ $(function() {
    var $textPreview = $('#text-preview');
    var $summaryRatio = $('#summary-ratio');
    var $summaryText = $('#summary-text');
+   var $tools = $('.tools');
 
    function updateView() {
      console.log("[update appearance]");
@@ -84,7 +85,18 @@ $(function() {
    });
 
 
+   $('#toggle-tools-btn').click(function() {
+      if (isToolsShown) {
+        $tools.css('visibility', "hidden");
+        $(this).html("Show Tools");
+      } else {
+        $tools.css('visibility', "visible");
+        $(this).html("Hide Tools");
+      }
+      
+      isToolsShown = !isToolsShown;
 
+   });
 
   updateView();
 });
