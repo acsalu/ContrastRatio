@@ -7,24 +7,28 @@ html(lang="en")
     script(src="./script/contrast-ratio.js")
     script(src="./script/script.js")
   body
+
     header
       .container
-        #header-color.contrast-title-color
-          .contrast-title Original Color
-          .float-wrapper
-            #header-title Contrast Ratio =
-            span.color-ratio 2.4
+        #header-color.header-block
+          .header-contrast-title Original Color
+          .header-contrast-content
             div
+              span.contrast-ratio-text Contrast Ratio = 
+              span.color-ratio 21.0
+            .color
               .semicircle-upper.color-foreground
               .semicircle-lower.color-background
-        #header-gray
-          .contrast-title Grayscale Color
-          .float-wrapper
-            #header-title Contrast Ratio =
-            span.gray-ratio 2.4
-            div
+
+        #header-gray.header-block
+          .header-contrast-title Grayscale Color
+          .header-contrast-content
+            .color
               .semicircle-upper.gray-foreground
               .semicircle-lower.gray-background
+            div
+              span.contrast-ratio-text Contrast Ratio = 
+              span.gray-ratio 21.0
 
     #toggle-tools-btn Hide Tools
 
@@ -50,6 +54,19 @@ html(lang="en")
         textarea#text-preview 測試文字，文本內容可以編輯，背景大小可以隨意改變。
         ul#fav-colors
 
-      .container
-        //- #ref-title Color Readability
-        canvas#canvas-ref
+      #rulers.container
+        #hierachy-ruler
+          .ruler-title Hierachy
+          .ruler
+            #ruler-hierachy-disable.ruler-component Disable
+            #ruler-hierachy-level1.ruler-component Level 1
+            #ruler-hierachy-level2.ruler-component Level 2
+            #ruler-hierachy-level3.ruler-component Level 3
+        #readability-ruler
+          .ruler-title Readability
+          .ruler
+            #ruler-readability-disable.ruler-component Disable
+            #ruler-readability-low.ruler-component Low Readability
+            #ruler-readability-high.ruler-component High Readability
+
+

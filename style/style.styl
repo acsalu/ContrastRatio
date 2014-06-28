@@ -1,6 +1,7 @@
 circleRadius = 10px
 colorInputHeight = 2*(circleRadius)
 colorTitleColor = #878787
+headerColorMargin = 10px
 
 *
   font-family sans-serif
@@ -12,19 +13,42 @@ body
 
 header {
 
-  .contrast-title {
-    font-family HelveticaNeue-CondensedBold
-    font-size 15px
+  .header-block {
+    display inline-block
+    margin-right 50px
+    padding 20px 0px 20px 0px
+
+    .header-contrast-title {
+      font-family HelveticaNeue-CondensedBold
+      font-size 15px
+    }
+
+    .header-contrast-content > div {
+      display inline-block
+      height circleRadius*2 - 2
+    }
+
+    .contrast-ratio-text {
+      font-family HelveticaNeue-Bold
+    }
   }
 
   .contrast-title-color {
     color colorTitleColor
   }
 
-
   #header-title {
     font-size 20px
   }
+
+  #header-color .color {
+    margin-left headerColorMargin
+  }
+
+  #header-gray .color {
+    margin-right headerColorMargin
+  }
+
 }
 
 #toggle-tools-btn
@@ -40,7 +64,7 @@ content {
 }
 
 .container
-  display block
+  // display block
   width 90%
   margin 0px auto
 
@@ -201,7 +225,74 @@ textInputOffset = 1px
   }
 }
 
+
+
 #contrast-ruler
   width 100%
   height 100px
   background linear-gradient left #ffffff 0% #000000 100%
+
+rulerHeight=18px
+rulerColorGray = #b0b0b0
+rulerColorOrange = #ffad00
+rulerColorLime = #9bcb00
+rulerColorGreen = #369800
+
+
+#rulers {
+  .ruler {
+    margin 10px 0 10px 0
+    width 100%
+    height rulerHeight
+    display block
+
+    .ruler-component {
+      display inline-block
+      height rulerHeight
+      color white
+      font-family HelveticaNeue-Medium
+      font-size 12px
+      line-height rulerHeight
+      text-align center
+    }
+  }
+
+  #hierachy-ruler {
+    #ruler-hierachy-disable {
+      width 25%
+      background-color rulerColorGray
+    }
+    #ruler-hierachy-level1 {
+      width 25%
+      background-color rulerColorOrange
+    }
+
+    #ruler-hierachy-level2 {
+      width 25%
+      background-color rulerColorLime
+    }
+
+    #ruler-hierachy-level3 {
+      width 25%
+      background-color rulerColorGreen
+    }
+  }
+
+  #readability-ruler {
+    #ruler-readability-disable {
+      width 25%
+      background-color rulerColorGray
+    }
+    #ruler-readability-low {
+      width 25%
+      background-color rulerColorOrange
+    }
+
+    #ruler-readability-high {
+      width 50%
+      background-color rulerColorGreen
+    }
+  }
+
+
+}
