@@ -17,6 +17,12 @@ $(function() {
    var $summaryText = $('#summary-text');
    var $tools = $('.tools');
 
+   var $rulerHierachy = $('#ruler-hierachy');
+   var $rulerReadibility = $('#ruler-readiblity');
+
+   var $hierachyGroup = $('.hierachy');
+   var $readabilityGroup = $('.readability');
+
    function updateView() {
      console.log("[update appearance]");
 
@@ -70,8 +76,12 @@ $(function() {
 
      if (isGray) {
        $('#header-gray').hide();
+       $readabilityGroup.hide();
+       $hierachyGroup.show();
      } else {
        $('#header-gray').show();
+       $readabilityGroup.show();
+       $hierachyGroup.hide();
      }
    }
 

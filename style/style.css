@@ -36,7 +36,7 @@ header #header-gray .color {
 #toggle-tools-btn {
   position: absolute;
   right: 40px;
-  top: 60px;
+  top: 30px;
   padding: 10px;
   border: 1px solid #ccc;
   width: 100px;
@@ -131,6 +131,7 @@ content {
   text-align: right;
   font-family: monospace;
   font-size: 1.2em;
+  background-color: transparent;
 }
 .float-wrapper {
   width: fit-content;
@@ -195,31 +196,31 @@ content {
   line-height: 18px;
   text-align: center;
 }
-#rulers #hierachy-ruler #ruler-hierachy-disable {
+#rulers #ruler-hierachy #ruler-hierachy-disable {
   width: 25%;
   background-color: #b0b0b0;
 }
-#rulers #hierachy-ruler #ruler-hierachy-level1 {
+#rulers #ruler-hierachy #ruler-hierachy-level1 {
   width: 25%;
   background-color: #ffad00;
 }
-#rulers #hierachy-ruler #ruler-hierachy-level2 {
+#rulers #ruler-hierachy #ruler-hierachy-level2 {
   width: 25%;
   background-color: #9bcb00;
 }
-#rulers #hierachy-ruler #ruler-hierachy-level3 {
+#rulers #ruler-hierachy #ruler-hierachy-level3 {
   width: 25%;
   background-color: #369800;
 }
-#rulers #readability-ruler #ruler-readability-disable {
+#rulers #ruler-readability #ruler-readability-disable {
   width: 25%;
   background-color: #b0b0b0;
 }
-#rulers #readability-ruler #ruler-readability-low {
+#rulers #ruler-readability #ruler-readability-low {
   width: 25%;
   background-color: #ffad00;
 }
-#rulers #readability-ruler #ruler-readability-high {
+#rulers #ruler-readability #ruler-readability-high {
   width: 50%;
   background-color: #369800;
 }
