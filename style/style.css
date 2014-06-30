@@ -34,16 +34,14 @@ header #header-title {
 header #header-color > * {
   display: inline-block;
 }
+header #header-color #header-color-text {
+  margin-top: -5px;
+}
 header #header-color .header-text {
+  display: inline-block;
   margin: 0px 5px 0px 5px;
   height: 20px;
   line-height: 20px;
-}
-header #header-color .color {
-  margin-left: 10px;
-}
-header #header-gray .color {
-  margin-right: 10px;
 }
 header #toggle-tools-btn {
   float: right;

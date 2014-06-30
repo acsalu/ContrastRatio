@@ -73,8 +73,8 @@ $(function() {
      var backgroundGrayL = getL(backgroundGrayHex);
      var grayRatio = contrastRatio(foregroundGrayL, backgroundGrayL);
 
-     $colorRatio.html(colorRatio.toString().substr(0, 4));
-     $grayRatio.html(grayRatio.toString().substr(0, 4));
+     $colorRatio.html(colorRatio.toFixed(1));
+     $grayRatio.html(grayRatio.toFixed(1));
      var summary;
      
 
