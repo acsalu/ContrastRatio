@@ -11,10 +11,10 @@ body
   background-color #fafafc
 
 header {
-
   .header-block {
     display inline-block
     margin-right 50px
+    height 30px
     padding 20px 0px 20px 0px
 
     .header-contrast-title {
@@ -63,6 +63,7 @@ header {
   }
 
   #header-color .color {
+    margin-top 10px
     // margin-left headerColorMargin
   }
 
@@ -275,14 +276,23 @@ textInputOffset = 1px
     font-size 15px
   }
 
-  #fav-panel {
-    display inline-block
+  #concise-mode {
     margin 0px auto
-    margin-top 30px
+    margin-top 10px
+    width circleRadius*2
+  }
+
+  #fav-panel {
+    width ((circleRadius)*2) * 5 + 10*5
+    height circleRadius*2
+    margin 0px auto
+
     #btns {
-      display inline-block
-      
+      width (circleRadius)*2 + 2
+      margin 0px auto
+      margin-top 10px
     }
+
     .btn-circle {
       display inline-block
       border 1px solid black
@@ -292,6 +302,15 @@ textInputOffset = 1px
       line-height circleRadius*2
       text-align center
       font-size 20px
+      // margin 0px 5px 0px 5px
+    }
+
+    #fav-colors {
+      margin-top 10px
+      .color {
+        display inline-block
+        margin 0px 5px 0px 5px
+      }
     }
   }
     
@@ -313,7 +332,7 @@ rulerColorGreen = #369800
 
 
 #rulers {
-
+  margin-top 60px
   .ruler-title {
     font-family HelveticaNeue-Medium
     font-size 15px

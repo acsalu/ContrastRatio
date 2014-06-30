@@ -14,17 +14,17 @@ html(lang="en")
         #header-ratio.header-block
           span.contrast-ratio-textContrast Contrast Ratio = 
           span.gray-ratio 21.0
-        #header-color.header-block.readability
-          .color
-              .semicircle-upper.color-foreground
-              .semicircle-lower.color-background
-          #header-color-text
-            .header-text.color-ratio 21.0
-            .header-text &#8594;
-            .header-text.gray-ratio 21.0
-          .color
-            .semicircle-upper.gray-foreground
-            .semicircle-lower.gray-background
+        //- #header-color.header-block.readability
+        //-   .color
+        //-       .semicircle-upper.color-foreground
+        //-       .semicircle-lower.color-background
+        //-   #header-color-text
+        //-     .header-text.color-ratio 21.0
+        //-     .header-text &#8594;
+        //-     .header-text.gray-ratio 21.0
+        //-   .color
+        //-     .semicircle-upper.gray-foreground
+        //-     .semicircle-lower.gray-background
             
 
         #toggle-tools-btn Hide Tools
@@ -54,11 +54,17 @@ html(lang="en")
           #summary-ratio.gray-ratio
           #summary-text low readibility
         textarea#text-preview 測試文字，文本內容可以編輯，背景大小可以隨意改變。
-        #fav-panel
+        #concise-mode
+          .color
+              .semicircle-upper.color-foreground
+              .semicircle-lower.color-background
+        #fav-panel.tools
           #btns
-            //- #btn-add-color.btn-circle +
-            //- #btn-delete-color.btn-circle x
-          ul#fav-colors
+            #btn-add-color.btn-circle +
+            #btn-delete-color.btn-circle x
+          #fav-colors
+            
+
 
 
       #rulers.container.tools

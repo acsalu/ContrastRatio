@@ -1,4 +1,6 @@
 var isToolsShown = true;
+var defaultForeground = "FFFFFF";
+var defaultBackground = "000000";
 
 $(function() {
 
@@ -23,8 +25,11 @@ $(function() {
    var $hierachyGroup = $('.hierachy');
    var $readabilityGroup = $('.readability');
 
-   $textPreview.autosize();
+   var $btnAddColor = $('#btn-add-color');
+   var $btnDelColor = $('#btn-delete-color');
 
+   $textPreview.autosize();
+   var hasSelectFavColor = false;
 
    function updateView() {
      console.log("[update appearance]");
@@ -101,6 +106,11 @@ $(function() {
      console.log(len);
      if (len == 6) {
         console.log("Change color to " + $(this).val());
+        if (hasSelectFavColor) {
+          hasSelectFavColor = false;
+          $btnAddColor.show();
+          $btnDelColor.hide();
+        }
         updateView();
      }
    });
@@ -117,6 +127,70 @@ $(function() {
       
       isToolsShown = !isToolsShown;
 
+   });
+
+
+   
+
+   $btnAddColor.show();
+   $btnDelColor.hide();
+
+   var favColorsLimit = 5;
+   var currentSelectIdx = -1;
+   var favColors = [];
+
+   function toggleFavPanelBtn() {
+    $btnAddColor.toggle();
+    $btnDelColor.toggle();
+   }
+
+   function setColor(foreground, background) {
+    $inputForeground.val("");
+    $inputBackground.val("");
+    $inputForeground.val(foreground);
+    $inputBackground.val(background);
+    updateView();
+   }
+
+   function addFavColor(foreground, background) {
+     if (favColors.length < favColorsLimit) {
+       favColors.push({'foreground': foreground, 'background': background});
+       $('#fav-colors').append("<div class='color'>" + 
+                                 "<div class='semicircle-upper'></div>" + 
+                                 "<div class='semicircle-lower'></div></div>");
+       $lastColor = $('#fav-colors>.color').last();
+       $lastColor.find('.semicircle-upper').css('background-color', "#" + foreground);
+       $lastColor.find('.semicircle-lower').css('background-color', "#" + background);
+
+       $lastColor.fadeIn();
+     }
+   }
+
+   $btnAddColor.click(function() {
+    var foregroundColor = $inputForeground.val();
+    var backgroundColor = $inputBackground.val();
+
+    console.log("Add " + foregroundColor + "/" + backgroundColor + " to fav.");
+    addFavColor(foregroundColor, backgroundColor);
+   });
+
+   $btnDelColor.click(function() {
+      $('#fav-colors>.color')[currentSelectIdx].remove();
+      favColors.splice(currentSelectIdx, 1);
+      setColor(defaultForeground, defaultBackground);
+      $btnAddColor.show();
+      $btnDelColor.hide();
+      currentSelectIdx = -1;
+      hasSelectFavColor = false;
+   });
+
+   $(document).on('click', "#fav-colors>.color", function() {
+      console.log("Change to fav color");
+      currentSelectIdx = $(this).index();
+      setColor(favColors[currentSelectIdx]['foreground'], favColors[currentSelectIdx]['background']);
+      hasSelectFavColor = true;
+      $btnAddColor.hide();
+      $btnDelColor.show();
    });
 
   updateView();
