@@ -23,6 +23,9 @@ $(function() {
    var $hierachyGroup = $('.hierachy');
    var $readabilityGroup = $('.readability');
 
+   $textPreview.autosize();
+
+
    function updateView() {
      console.log("[update appearance]");
 
@@ -72,17 +75,25 @@ $(function() {
 
      $colorRatio.html(colorRatio.toString().substr(0, 4));
      $grayRatio.html(grayRatio.toString().substr(0, 4));
-     $summaryText.html(getReadabilityText(grayRatio));
+     var summary;
+     
 
      if (isGray) {
        $('#header-gray').hide();
        $readabilityGroup.hide();
        $hierachyGroup.show();
+       summary = getHierachySummary(grayRatio);
      } else {
        $('#header-gray').show();
        $readabilityGroup.show();
        $hierachyGroup.hide();
+       summary = getReadabilitySummary(grayRatio);
      }
+
+
+     $summaryText.html(summary['text']);
+     $summaryText.css('color', summary['color']);
+     $summaryRatio.css('color', summary['color']);
    }
 
    $('.hex-code-input').on('keyup', function(e) {

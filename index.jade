@@ -4,47 +4,48 @@ html(lang="en")
     title= "Contrast Ratio"
     link(rel="stylesheet", href="./style/style.css")
     script(src="./bower_components/jquery/dist/jquery.min.js")
+    script(src="./bower_components/jquery-autosize/jquery.autosize.min.js")
     script(src="./script/contrast-ratio.js")
     script(src="./script/script.js")
   body
 
     header
       .container
-        #header-color.header-block
-          .header-contrast-title Original Color
-          .header-contrast-content
-            div
-              span.contrast-ratio-text Contrast Ratio = 
-              span.color-ratio 21.0
-            .color
+        #header-ratio.header-block
+          span.contrast-ratio-textContrast Contrast Ratio = 
+          span.gray-ratio 21.0
+        #header-color.header-block.readability
+          .color
               .semicircle-upper.color-foreground
               .semicircle-lower.color-background
+          .header-text.color-ratio 21.0
+          .header-text &#8594;
+          .header-text.gray-ratio 21.0
+          .color
+            .semicircle-upper.gray-foreground
+            .semicircle-lower.gray-background
+            
 
-        #header-gray.header-block
-          .header-contrast-title Grayscale Color
-          .header-contrast-content
-            .color
-              .semicircle-upper.gray-foreground
-              .semicircle-lower.gray-background
-            div
-              span.contrast-ratio-text Contrast Ratio = 
-              span.gray-ratio 21.0
+        #toggle-tools-btn Hide Tools
 
-    #toggle-tools-btn Hide Tools
+   
 
     content
       .container
         #input-group.tools
           .color-input.float-wrapper
-            div Foreground Color:
-            .input-wrapper
-              input#input-foreground.hex-code-input(type="text", value="FFFFFF")
+            .input-title Foreground
             .circle.color-foreground
-          .color-input.float-wrapper
-            div Background Color:
             .input-wrapper
-              input#input-background.hex-code-input(type="text", value="000000")
+              span #
+              input#input-foreground.hex-code-input(type="text", value="FFFFFF")
+          .color-input.float-wrapper
+            .input-title Background
             .circle.color-background
+            .input-wrapper
+              span #
+              input#input-background.hex-code-input(type="text", value="000000")
+            
 
 
       #preview.container
@@ -52,7 +53,12 @@ html(lang="en")
           #summary-ratio.gray-ratio
           #summary-text low readibility
         textarea#text-preview 測試文字，文本內容可以編輯，背景大小可以隨意改變。
-        ul#fav-colors
+        #fav-panel
+          #btns
+            #btn-add-color.btn-circle +
+            #btn-delete-color.btn-circle x
+          ul#fav-colors
+
 
       #rulers.container.tools
         #ruler-hierachy.hierachy
@@ -66,7 +72,7 @@ html(lang="en")
           .ruler-title Readability
           .ruler
             #ruler-readability-disable.ruler-component Disable
-            #ruler-readability-low.ruler-component Low Readability
+            #ruler-readability-low.ruler-component Low
             #ruler-readability-high.ruler-component High Readability
 
 

@@ -4,7 +4,6 @@ String.prototype.repeat = function(times) {
 };
 
 
-
 function rgb2gray(hexString) {
 
   var r = parseInt(hexString.substr(0, 2), 16);
@@ -83,14 +82,64 @@ function contrastRatio(L1, L2) {
   return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
 }
 
-function getReadabilityText(ratio) {
+var rulerColorGray = "#b0b0b0";
+var rulerColorOrange = "#ffad00";
+var rulerColorLime = "#9bcb00";
+var rulerColorGreen = "#369800";
+
+
+function getReadabilitySummary(ratio) {
+  
+  var summary = {};
+  var text;
+  var color;
+  
   if (ratio < 0) {
-    return ""
+    text = ""
+    color = "#000000"
   } else if (ratio < 2.0) {
-    return "Disable";
+    text =  "Disable";
+    color = rulerColorGray;
   } else if (ratio < 2.5) {
-    return "Low Readability";
+    text = "Low Readability";
+    color = rulerColorOrange;
   } else {
-    return "High Readability";
+    text = "High Readability";
+    color = rulerColorGreen;
   }
+
+  summary['text'] = text;
+  summary['color'] = color;
+
+  return summary;
+}
+
+function getHierachySummary(ratio) {
+
+  var summary = {};
+  var text;
+  var color;
+
+  if (ratio < 0) {
+    text =  "";
+    color = "#000000";
+  } else if (ratio < 2.0) {
+    text =  "Disable";
+    color = rulerColorGray;
+  } else if (ratio < 3.0) {
+    text =  "Hierachy Level 1";
+    color = rulerColorOrange;
+  } else if (ratio < 7.0) {
+    text =  "Hierachy Level 2";
+    color = rulerColorLime;
+  } else {
+  	text =  "Hierachy Level 3";
+  	color = rulerColorGreen;
+  }
+
+  summary['text'] = text;
+  summary['color'] = color;
+
+  return summary;
+
 }

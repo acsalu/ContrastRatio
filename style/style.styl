@@ -10,7 +10,6 @@ body
   margin 0 auto
   background-color #fafafc
 
-
 header {
 
   .header-block {
@@ -37,8 +36,26 @@ header {
     color colorTitleColor
   }
 
+  #header-ratio {
+    font-family HelveticaNeue-Bold
+    font-size 21px
+  }
+
   #header-title {
     font-size 20px
+  }
+
+  #header-color > * {
+    display inline-block
+  }
+
+  #header-color {
+    
+    .header-text {
+      margin 0px 5px 0px 5px
+      height circleRadius*2
+      line-height circleRadius*2
+    }
   }
 
   #header-color .color {
@@ -49,16 +66,25 @@ header {
     margin-right headerColorMargin
   }
 
+  toggleToolsColor = #a2a2a2
+  #toggle-tools-btn {
+    float right
+    margin-top 30px
+    padding 10px
+    border 1px solid toggleToolsColor
+    text-align center
+    width 80px
+    font-family HelveticaNeue-Medium
+    font-size 13px
+    color toggleToolsColor
+  }
+
+  after() {
+    clear both
+  }
 }
 
-#toggle-tools-btn
-  position absolute
-  right 40px
-  top 30px
-  padding 10px
-  border 1px solid #CCC
-  width 100px
-  text-align center
+
 
 content {
   padding-top 20px
@@ -159,17 +185,33 @@ textInputOffset = 1px
     padding-top 4px
   }
 
+  .input-title {
+    font-family HelveticaNeue-Medium
+    font-size 13px
+    color #979797
+  }
+
+  .circle {
+    margin 0px 30px 0px 30px
+  }
+
   .input-wrapper {
 
-    height colorInputHeight
+    height circleRadius * 2
     border-bottom 1px solid black
+
+    span {
+      font-family Menlo, monospace
+      font-size 15px
+    }
 
     .hex-code-input {
       border none
       text-align right
-      font-family monospace
-      font-size 1.2em
+      font-family Menlo, monospace
+      font-size 15px
       background-color transparent
+      width 60px
     }
   }
 }
@@ -216,8 +258,6 @@ textInputOffset = 1px
   #text-preview {
     border 0px
     padding 10px 15px 15px 10px
-    height 60px
-    width 240px
     background #CACACA
     color red
     display block
@@ -225,7 +265,33 @@ textInputOffset = 1px
     margin-top 20px
     font-size 18px
     resize horizontal
+    vertical-align middle
+
+    font-family HelveticaNeue-Light
+    font-size 15px
   }
+
+  #fav-panel {
+    display inline-block
+    margin 0px auto
+    margin-top 30px
+    #btns {
+      display inline-block
+      
+    }
+    .btn-circle {
+      display inline-block
+      border 1px solid black
+      border-radius 100%
+      width circleRadius*2
+      height circleRadius*2
+      line-height circleRadius*2
+      text-align center
+      font-size 20px
+    }
+  }
+    
+
 }
 
 
@@ -268,40 +334,52 @@ rulerColorGreen = #369800
 
   #ruler-hierachy {
     #ruler-hierachy-disable {
-      width 25%
+      width 28%
       background-color rulerColorGray
     }
     #ruler-hierachy-level1 {
-      width 25%
+      width 13.5%
       background-color rulerColorOrange
     }
 
     #ruler-hierachy-level2 {
-      width 25%
+      width 23.5%
       background-color rulerColorLime
     }
 
     #ruler-hierachy-level3 {
-      width 25%
+      width 35%
       background-color rulerColorGreen
     }
   }
 
   #ruler-readability {
     #ruler-readability-disable {
-      width 25%
+      width 28%
       background-color rulerColorGray
     }
     #ruler-readability-low {
-      width 25%
+      width 7%
       background-color rulerColorOrange
     }
 
     #ruler-readability-high {
-      width 50%
+      width 65%
       background-color rulerColorGreen
     }
   }
+}
 
+circleRadiusMobile = 20px
 
+@media screen and (max-width: 540px) {
+  .circle {
+    height (circleRadiusMobile)*2
+    width (circleRadiusMobile)*2
+    border-radius 100%
+    border 1px solid black
+  }
+  .input-wrapper {
+    display none
+  }
 }
