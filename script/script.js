@@ -28,7 +28,10 @@ $(function() {
    var $btnAddColor = $('#btn-add-color');
    var $btnDelColor = $('#btn-delete-color');
 
+   var $concise = $('.concise');
+
    $textPreview.autosize();
+   $concise.hide();
    var hasSelectFavColor = false;
 
    function updateView() {
@@ -120,9 +123,11 @@ $(function() {
       if (isToolsShown) {
         $tools.css('visibility', "hidden");
         $(this).html("Show Tools");
+        $concise.show();
       } else {
         $tools.css('visibility', "visible");
         $(this).html("Hide Tools");
+        $concise.hide();
       }
       
       isToolsShown = !isToolsShown;
@@ -162,7 +167,7 @@ $(function() {
        $lastColor.find('.semicircle-upper').css('background-color', "#" + foreground);
        $lastColor.find('.semicircle-lower').css('background-color', "#" + background);
 
-       $lastColor.fadeIn();
+       $lastColor.hide().fadeIn(200);
      }
    }
 
