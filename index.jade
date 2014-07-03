@@ -2,9 +2,17 @@ doctype html
 html(lang="en")
   head
     title= "Contrast Ratio"
+    //- link(rel="stylesheet", href="./bower_components/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet", href="./bower_components/fontawesome/css/font-awesome.min.css")
+    link(rel="stylesheet", href="./style/bootstrap.colorpickersliders.css")
     link(rel="stylesheet", href="./style/style.css")
+
+    
     script(src="./bower_components/jquery/dist/jquery.min.js")
+    script(src="./bower_components/bootstrap/dist/js/bootstrap.min.js")
     script(src="./bower_components/jquery-autosize/jquery.autosize.min.js")
+    script(src="./bower_components/tinycolor/tinycolor.js")
+    script(src="./script/bootstrap.colorpickersliders.js")
     script(src="./script/contrast-ratio.js")
     script(src="./script/script.js")
   body
@@ -35,17 +43,17 @@ html(lang="en")
       .container
         #input-group.tools
           .color-input.float-wrapper
-            .input-title Foreground
-            .circle.color-foreground
             .input-wrapper
               span #
               input#input-foreground.hex-code-input(type="text", value="FFFFFF")
+            .circle.color-foreground
+            .input-title Foreground
           .color-input.float-wrapper
-            .input-title Background
-            .circle.color-background
             .input-wrapper
               span #
               input#input-background.hex-code-input(type="text", value="000000")
+            .circle.color-background
+            .input-title Background
             
 
 
@@ -60,8 +68,10 @@ html(lang="en")
               .semicircle-lower.color-background
         #fav-panel.tools
           #btns
-            #btn-add-color.btn-circle +
-            #btn-delete-color.btn-circle x
+            #btn-add-color.btn-circle
+              i.fa.fa-plus
+            #btn-delete-color.btn-circle
+              i.fa.fa-times
           #fav-colors
             
 
@@ -81,5 +91,9 @@ html(lang="en")
             #ruler-readability-disable.ruler-component Disable
             #ruler-readability-low.ruler-component Low
             #ruler-readability-high.ruler-component High Readability
+
+      #color-picker-panel
+        #color-picker
+
 
 

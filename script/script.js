@@ -29,6 +29,8 @@ $(function() {
    var $btnDelColor = $('#btn-delete-color');
 
    var $concise = $('.concise');
+   var $colorPickerPanel = $('#color-picker-panel');
+   var $colorPicker = $('#color-picker');
 
    $textPreview.autosize();
    $concise.hide();
@@ -119,6 +121,52 @@ $(function() {
    });
 
 
+   var iscolorPickerPanelOpened = false;
+   var iscolorPickerPanelExpanding = false;
+   var colorPickerPanelHeight = $colorPickerPanel.height();
+   var currentModifyColorInput = NaN;
+
+   function setColorPickerPanelState(shouldOpen) {
+
+   };
+
+   $('.circle').click(function() {
+     if (!iscolorPickerPanelExpanding) {
+       currentModifyColorInput = $(this).siblings('.input-wrapper').find('input');
+       iscolorPickerPanelExpanding = true;
+       var animateValue = (iscolorPickerPanelOpened) ? "-=" + colorPickerPanelHeight : "+=" + colorPickerPanelHeight;
+       $colorPickerPanel.animate({
+         bottom: animateValue
+       }, 700, function() {
+         iscolorPickerPanelOpened = !iscolorPickerPanelOpened;
+         iscolorPickerPanelExpanding = false;
+       });
+     }
+   });
+
+   $('#color-picker').ColorPickerSliders({
+     color: "rgb(255, 255, 255)",
+     flat: true,
+     swatches: false,
+     order: {
+      rgb: 1,
+      hsl: 2
+     },
+     onchange: function(container, color) {
+      if (currentModifyColorInput) {
+        currentModifyColorInput.val(color.tiny.toHex());
+        updateView();
+      }
+     }
+   });
+
+   $('body').click(function() {
+     if (iscolorPickerPanelOpened) {
+       console.log("ready to dismiss");
+     }
+   });
+
+
    $('#toggle-tools-btn').click(function() {
       if (isToolsShown) {
         $tools.css('visibility', "hidden");
@@ -133,9 +181,6 @@ $(function() {
       isToolsShown = !isToolsShown;
 
    });
-
-
-   
 
    $btnAddColor.show();
    $btnDelColor.hide();
