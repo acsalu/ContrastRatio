@@ -50,7 +50,7 @@ header #header-color .header-text {
   line-height: 20px;
 }
 header #header-color .color {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 header #toggle-tools-btn {
   float: right;
