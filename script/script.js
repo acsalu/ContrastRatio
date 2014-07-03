@@ -104,6 +104,8 @@ $(function() {
      $summaryText.html(summary['text']);
      $summaryText.css('color', summary['color']);
      $summaryRatio.css('color', summary['color']);
+
+     
    }
 
    $('.hex-code-input').on('keyup', function(e) {
@@ -121,50 +123,91 @@ $(function() {
    });
 
 
-   var iscolorPickerPanelOpened = false;
-   var iscolorPickerPanelExpanding = false;
+   var isColorPickerPanelOpened = false;
+   var isColorPickerPanelExpanding = false;
    var colorPickerPanelHeight = $colorPickerPanel.height();
    var currentModifyColorInput = NaN;
 
-   function setColorPickerPanelState(shouldOpen) {
-
+   function getSliderColor() {
+     if (!currentModifyColorInput) {
+       return "rgb(255, 0, 0)";
+     } else {
+       return currentModifyColorInput.val();
+     }
    };
 
-   $('.circle').click(function() {
-     if (!iscolorPickerPanelExpanding) {
-       currentModifyColorInput = $(this).siblings('.input-wrapper').find('input');
-       iscolorPickerPanelExpanding = true;
-       var animateValue = (iscolorPickerPanelOpened) ? "-=" + colorPickerPanelHeight : "+=" + colorPickerPanelHeight;
+
+   var animateOpen = "+=" + colorPickerPanelHeight;
+   var animateClose = "-=" + colorPickerPanelHeight;
+   var animateDuration = 700;
+
+   function openColorPickerPanel() {
+     if (!isColorPickerPanelExpanding && !isColorPickerPanelOpened) {
+       isColorPickerPanelExpanding = true;
        $colorPickerPanel.animate({
-         bottom: animateValue
-       }, 700, function() {
-         iscolorPickerPanelOpened = !iscolorPickerPanelOpened;
-         iscolorPickerPanelExpanding = false;
+         bottom: animateOpen
+       }, animateDuration, function() {
+         isColorPickerPanelOpened = true;
+         isColorPickerPanelExpanding = false;
        });
      }
+   };
+
+   
+   function closeColorPickerPanel() {
+     if (!isColorPickerPanelExpanding && isColorPickerPanelOpened) {
+       isColorPickerPanelExpanding = true;
+       $colorPickerPanel.animate({
+         bottom: animateClose
+       }, animateDuration, function() {
+         isColorPickerPanelOpened = false;
+         isColorPickerPanelExpanding = false;
+       });
+     }
+   };
+
+    $('.circle').click(function() {
+      currentModifyColorInput = $(this).siblings('.input-wrapper').find('input');
+      updateView();
+      $('#color-picker').html("");
+      $('#color-picker').ColorPickerSliders({
+        color: getSliderColor(),
+        flat: true,
+        swatches: false,
+        order: {
+          rgb: 1,
+          hsl: 2
+        }, onchange: function(container, color) {
+          console.log("picker change");
+          if (currentModifyColorInput) {
+            currentModifyColorInput.val(color.tiny.toHex());
+            updateView();
+          }
+        }
+      });
+      openColorPickerPanel();
    });
 
-   $('#color-picker').ColorPickerSliders({
-     color: "rgb(255, 255, 255)",
-     flat: true,
-     swatches: false,
-     order: {
-      rgb: 1,
-      hsl: 2
-     },
-     onchange: function(container, color) {
-      if (currentModifyColorInput) {
-        currentModifyColorInput.val(color.tiny.toHex());
-        updateView();
+   
+
+    $('body > [class!="action"]').click(function(event) {
+      var $target = $(event.target);
+      console.log($target);
+
+      if ($target.hasClass("action")) {
+        console.log("do nothing");
+      } else {
+        console.log("do something");
+        if (isColorPickerPanelOpened) {
+          closeColorPickerPanel();
+        }
       }
-     }
-   });
 
-   $('body').click(function() {
-     if (iscolorPickerPanelOpened) {
-       console.log("ready to dismiss");
-     }
-   });
+    // if (isColorPickerPanelOpened) {
+    //   console.log("ready to dismiss");
+    //   closeColorPickerPanel();
+    // }
+    });
 
 
    $('#toggle-tools-btn').click(function() {

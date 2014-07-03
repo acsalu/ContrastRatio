@@ -304,12 +304,12 @@
                 }
 
                 if (settings.order.hsl !== false) {
-                    sliders[settings.order.hsl] = '<div id="cp-slider-group-hsl" class="cp-slider-group"><div class="cp-slider cp-hslhue cp-transparency"><span></span><div class="cp-marker">H</div></div><div class="cp-slider cp-hslsaturation cp-transparency"><span></span><div class="cp-marker">S</div></div><div class="cp-slider cp-hsllightness cp-transparency"><span></span><div class="cp-marker">L</div></div></div>';
+                    sliders[settings.order.hsl] = '<div id="cp-slider-group-hsl" class="cp-slider-group"><div class="cp-slider cp-hslhue cp-transparency"><span class="action"></span><div class="cp-marker action">H</div></div><div class="cp-slider cp-hslsaturation cp-transparency"><span class="action"></span><div class="cp-marker action">S</div></div><div class="cp-slider cp-hsllightness cp-transparency"><span class="action"></span><div class="cp-marker action">L</div></div></div>';
                     //sliders[settings.order.hsl] = '<div class="cp-slider cp-hslhue cp-transparency"><span>' + settings.labels.hslhue + '</span><div class="cp-marker"></div></div><div class="cp-slider cp-hslsaturation cp-transparency"><span>' + settings.labels.hslsaturation + '</span><div class="cp-marker"></div></div><div class="cp-slider cp-hsllightness cp-transparency"><span>' + settings.labels.hsllightness + '</span><div class="cp-marker"></div></div>';
                 }
 
                 if (settings.order.rgb !== false) {
-                    sliders[settings.order.rgb] = '<div id="cp-slider-group-rgb" class="cp-slider-group"><div class="cp-slider cp-rgbred cp-transparency"><span></span><div class="cp-marker">R</div></div><div class="cp-slider cp-rgbgreen cp-transparency"><span></span><div class="cp-marker">G</div></div><div class="cp-slider cp-rgbblue cp-transparency"><span></span><div class="cp-marker">B</div></div></div>';
+                    sliders[settings.order.rgb] = '<div id="cp-slider-group-rgb" class="cp-slider-group"><div class="cp-slider cp-rgbred cp-transparency"><span class="action"></span><div class="cp-marker action">R</div></div><div class="cp-slider cp-rgbgreen cp-transparency"><span class="action"></span><div class="cp-marker action">G</div></div><div class="cp-slider cp-rgbblue cp-transparency"><span class="action"></span><div class="cp-marker action">B</div></div></div>';
                     // sliders[settings.order.rgb] = '<div class="cp-slider cp-rgbred cp-transparency"><span>' + settings.labels.rgbred + '</span><div class="cp-marker"></div></div><div class="cp-slider cp-rgbgreen cp-transparency"><span>' + settings.labels.rgbgreen + '</span><div class="cp-marker"></div></div><div class="cp-slider cp-rgbblue cp-transparency"><span>' + settings.labels.rgbblue + '</span><div class="cp-marker"></div></div>';
                 }
 

@@ -35,7 +35,7 @@ html(lang="en")
         //-     .semicircle-lower.gray-background
             
 
-        #toggle-tools-btn Hide Tools
+        #toggle-tools-btn.action Hide Tools
 
    
 
@@ -45,14 +45,14 @@ html(lang="en")
           .color-input.float-wrapper
             .input-wrapper
               span #
-              input#input-foreground.hex-code-input(type="text", value="FFFFFF")
-            .circle.color-foreground
+              input#input-foreground.hex-code-input(type="text", value="ffffff")
+            .circle.color-foreground.action.action-click
             .input-title Foreground
           .color-input.float-wrapper
             .input-wrapper
               span #
               input#input-background.hex-code-input(type="text", value="000000")
-            .circle.color-background
+            .circle.color-background.action.action-click
             .input-title Background
             
 
@@ -61,16 +61,16 @@ html(lang="en")
         #summary
           #summary-ratio.gray-ratio
           #summary-text low readibility
-        textarea#text-preview 測試文字，文本內容可以編輯，背景大小可以隨意改變。
+        textarea#text-preview.action 測試文字，文本內容可以編輯，背景大小可以隨意改變。
         #concise-mode.concise
           .color
               .semicircle-upper.color-foreground
               .semicircle-lower.color-background
         #fav-panel.tools
           #btns
-            #btn-add-color.btn-circle
+            #btn-add-color.btn-circle.action.action-click
               i.fa.fa-plus
-            #btn-delete-color.btn-circle
+            #btn-delete-color.btn-circle.action.action-click
               i.fa.fa-times
           #fav-colors
             
@@ -92,7 +92,7 @@ html(lang="en")
             #ruler-readability-low.ruler-component Low
             #ruler-readability-high.ruler-component High Readability
 
-      #color-picker-panel
+      #color-picker-panel.action
         #color-picker
 
 
