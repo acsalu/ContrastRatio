@@ -35,6 +35,7 @@ $(function() {
    $textPreview.autosize();
    $concise.hide();
    var hasSelectFavColor = false;
+   var hasSetColorPickerInsideUpdateView = false;
 
    function updateView() {
      console.log("[update appearance]");
@@ -105,7 +106,30 @@ $(function() {
      $summaryText.css('color', summary['color']);
      $summaryRatio.css('color', summary['color']);
 
-     
+     // color picker
+     if (isColorPickerPanelOpened && currentModifyColorInput && !hasSetColorPickerInsideUpdateView) {
+       hasSetColorPickerInsideUpdateView = true;
+       setupColorPicker();
+     }  
+   }
+
+   function setupColorPicker() {
+     $('#color-picker').html("");
+       $('#color-picker').ColorPickerSliders({
+        color: getSliderColor(),
+        flat: true,
+        swatches: false,
+        order: {
+          rgb: 1,
+          hsl: 2
+        }, onchange: function(container, color) {
+          console.log("picker change");
+          if (currentModifyColorInput) {
+            currentModifyColorInput.val(color.tiny.toHex());
+            updateView();
+          }
+        }
+      });
    }
 
    $('.hex-code-input').on('keyup', function(e) {
@@ -118,6 +142,8 @@ $(function() {
           $btnAddColor.show();
           $btnDelColor.hide();
         }
+
+        hasSetColorPickerInsideUpdateView = false;
         updateView();
      }
    });
@@ -169,22 +195,7 @@ $(function() {
     $('.circle').click(function() {
       currentModifyColorInput = $(this).siblings('.input-wrapper').find('input');
       updateView();
-      $('#color-picker').html("");
-      $('#color-picker').ColorPickerSliders({
-        color: getSliderColor(),
-        flat: true,
-        swatches: false,
-        order: {
-          rgb: 1,
-          hsl: 2
-        }, onchange: function(container, color) {
-          console.log("picker change");
-          if (currentModifyColorInput) {
-            currentModifyColorInput.val(color.tiny.toHex());
-            updateView();
-          }
-        }
-      });
+      setupColorPicker();
       openColorPickerPanel();
    });
 
@@ -202,11 +213,6 @@ $(function() {
           closeColorPickerPanel();
         }
       }
-
-    // if (isColorPickerPanelOpened) {
-    //   console.log("ready to dismiss");
-    //   closeColorPickerPanel();
-    // }
     });
 
 

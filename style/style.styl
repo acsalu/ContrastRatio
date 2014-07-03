@@ -405,7 +405,7 @@ rulerColorGreen = #369800
   }
 }
 
-colorPickerPanelHeight=280px
+colorPickerPanelHeight=220px
 colorPickerWidth=400px
 #color-picker-panel {
   position absolute
@@ -415,16 +415,29 @@ colorPickerWidth=400px
   height colorPickerPanelHeight
   z-index 100
 
+  .cp-sliders {
+    display block
+    height 100%;
+  }
   .cp-slider-group {
     display inline-block
     width colorPickerWidth
     margin 0px auto
     padding 10px
 
-
     .cp-slider {
       width colorPickerWidth
+      margin 50px 0 50px 0
     }
+  }
+
+  // sliderGroupMarginHalf=50px
+  #cp-slider-group-rgb {
+    float left
+  }
+
+  #cp-slider-group-hsl {
+    float right
   }
 
 }
@@ -453,4 +466,25 @@ circleRadiusMobile = 20px
   .color-input {
     display inline-block
   }
+
+  .cp-slider-group {
+    display block
+    width colorPickerWidth
+    margin 0px auto
+    padding 10px
+
+    .cp-slider {
+      margin 20px 0 20px 0 !important
+    }
+  }
+
+  #cp-slider-group-rgb {
+    float none !important
+  }
+
+  #cp-slider-group-hsl {
+    float none !important
+  }
+
+
 }
