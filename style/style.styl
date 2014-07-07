@@ -136,34 +136,6 @@ linear-gradient()
 #content
   margin-top 100px
 
-.col-md-4
-  height 60px
-  line-height 60px
-  text-align center
-  background red
-  color white
-
-.swatch
-  background yellow
-  width 100px
-  height 20px
-
-#foreground-color-swatch
-  background-color yellow
-  height 30
-
-#background-color-swatch
-  background-color green
-  height 30
-
-.child-float-left > *
-  float left
-
-.chile-float-left:after()
-  clear both
-
-
-
 .color-input-group {
   height colorInputHeight
   background white
@@ -266,17 +238,14 @@ textInputOffset = 1px
   }
 
   #text-preview {
-    border 0px
+    min-width 100px
+    max-width 100%
+    min-height 20px
+    width 150px
     padding 10px 15px 15px 10px
-    background #CACACA
-    color red
-    display block
     margin 0 auto
     margin-top 20px
-    font-size 18px
     resize horizontal
-    vertical-align middle
-
     font-family HelveticaNeue-Light
     font-size 15px
   }

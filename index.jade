@@ -2,15 +2,14 @@ doctype html
 html(lang="en")
   head
     title= "Contrast Ratio"
-    //- link(rel="stylesheet", href="./bower_components/bootstrap/dist/css/bootstrap.css")
     link(rel="stylesheet", href="./bower_components/fontawesome/css/font-awesome.min.css")
     link(rel="stylesheet", href="./style/bootstrap.colorpickersliders.css")
     link(rel="stylesheet", href="./style/style.css")
 
     
     script(src="./bower_components/jquery/dist/jquery.min.js")
+    script(src="./bower_components/jqueryui/ui/minified/jquery-ui.min.js")
     script(src="./bower_components/bootstrap/dist/js/bootstrap.min.js")
-    script(src="./bower_components/jquery-autosize/jquery.autosize.min.js")
     script(src="./bower_components/tinycolor/tinycolor.js")
     script(src="./script/bootstrap.colorpickersliders.js")
     script(src="./script/contrast-ratio.js")
@@ -61,7 +60,7 @@ html(lang="en")
         #summary
           #summary-ratio.gray-ratio
           #summary-text low readibility
-        textarea#text-preview.action 測試文字，文本內容可以編輯，背景大小可以隨意改變。
+        #text-preview.ui-widget-content.action(contenteditable) 測試文字，文本內容可以編輯，背景大小可以隨意改變。
         #concise-mode.concise
           .color
               .semicircle-upper.color-foreground

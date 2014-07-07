@@ -32,7 +32,7 @@ $(function() {
    var $colorPickerPanel = $('#color-picker-panel');
    var $colorPicker = $('#color-picker');
 
-   $textPreview.autosize();
+   $textPreview.resizable();
    $concise.hide();
    var hasSelectFavColor = false;
    var hasSetColorPickerInsideUpdateView = false;
@@ -205,13 +205,8 @@ $(function() {
       var $target = $(event.target);
       console.log($target);
 
-      if ($target.hasClass("action")) {
-        console.log("do nothing");
-      } else {
-        console.log("do something");
-        if (isColorPickerPanelOpened) {
+      if (!$target.hasClass("action") && isColorPickerPanelOpened) {
           closeColorPickerPanel();
-        }
       }
     });
 

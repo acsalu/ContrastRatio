@@ -97,32 +97,6 @@ content {
 #content {
   margin-top: 100px;
 }
-.col-md-4 {
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  background: #f00;
-  color: #fff;
-}
-.swatch {
-  background: #ff0;
-  width: 100px;
-  height: 20px;
-}
-#foreground-color-swatch {
-  background-color: #ff0;
-  height: 30;
-}
-#background-color-swatch {
-  background-color: #008000;
-  height: 30;
-}
-.child-float-left > * {
-  float: left;
-}
-.chile-float-left:after() {
-  clear: both;
-}
 .color-input-group {
   height: 20px;
   background: #fff;
@@ -194,16 +168,14 @@ content {
   color: #8a8a8a;
 }
 #preview #text-preview {
-  border: 0px;
+  min-width: 100px;
+  max-width: 100%;
+  min-height: 20px;
+  width: 150px;
   padding: 10px 15px 15px 10px;
-  background: #cacaca;
-  color: #f00;
-  display: block;
   margin: 0 auto;
   margin-top: 20px;
-  font-size: 18px;
   resize: horizontal;
-  vertical-align: middle;
   font-family: HelveticaNeue-Light;
   font-size: 15px;
 }
