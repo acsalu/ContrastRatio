@@ -121,12 +121,17 @@ $(function() {
      // console.log("ruler " + $rulerReadability.width());
      // console.log("indicator " + rulerIndicatorPosition);
      // console.log("indicator " + rulerIndicatorPositionPixel);
-     $rulerIndicator.animate({
-         left: rulerIndicatorPositionPixel
-       }, animateDuration, function() {
-         // isColorPickerPanelOpened = true;
-         // isColorPickerPanelExpanding = false;
-       });
+
+     if (shouldIndicatorAnimate) {
+      $rulerIndicator.animate({
+        left: rulerIndicatorPositionPixel
+      }, animateDuration, function() {
+        // isColorPickerPanelOpened = true;
+        // isColorPickerPanelExpanding = false;
+      });
+     } else {
+      $rulerIndicator.css('left', rulerIndicatorPositionPixel)
+     }
 
      // color picker
      if (isColorPickerPanelOpened && currentModifyColorInput && !hasSetColorPickerInsideUpdateView) {

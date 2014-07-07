@@ -34,6 +34,8 @@
  *      http://www.easyrgb.com/index.php?X=MATH
  * ====================================================================== */
 
+ var shouldIndicatorAnimate = true;
+
 (function($) {
     "use strict";
 
@@ -517,6 +519,7 @@
                 });
 
                 elements.sliders.hue.parent().on("touchstart mousedown", function(ev) {
+                    shouldIndicatorAnimate = false;
                     ev.preventDefault();
 
                     if (ev.which > 1) {
@@ -530,9 +533,12 @@
                     _updateColorsProperty('hsla', 'h', 3.6 * percent);
 
                     _updateAllElements();
+                }).on("touchend mouseup", function(ev) {
+                    shouldIndicatorAnimate = true;
                 });
 
                 elements.sliders.saturation.parent().on("touchstart mousedown", function(ev) {
+                    shouldIndicatorAnimate = false;
                     ev.preventDefault();
 
                     if (ev.which > 1) {
@@ -546,9 +552,12 @@
                     _updateColorsProperty('hsla', 's', percent / 100);
 
                     _updateAllElements();
+                }).on("touchend mouseup", function(ev) {
+                    shouldIndicatorAnimate = true;
                 });
 
                 elements.sliders.lightness.parent().on("touchstart mousedown", function(ev) {
+                    shouldIndicatorAnimate = false;
                     ev.preventDefault();
 
                     if (ev.which > 1) {
@@ -562,9 +571,12 @@
                     _updateColorsProperty('hsla', 'l', percent / 100);
 
                     _updateAllElements();
+                }).on("touchend mouseup", function(ev) {
+                    shouldIndicatorAnimate = true;
                 });
 
                 elements.sliders.opacity.parent().on("touchstart mousedown", function(ev) {
+                    shouldIndicatorAnimate = false;
                     ev.preventDefault();
 
                     if (ev.which > 1) {
@@ -578,9 +590,12 @@
                     _updateColorsProperty('hsla', 'a', percent / 100);
 
                     _updateAllElements();
+                }).on("touchend mouseup", function(ev) {
+                    shouldIndicatorAnimate = true;
                 });
 
                 elements.sliders.red.parent().on("touchstart mousedown", function(ev) {
+                    shouldIndicatorAnimate = false;
                     ev.preventDefault();
 
                     if (ev.which > 1) {
@@ -594,9 +609,12 @@
                     _updateColorsProperty('rgba', 'r', 2.55 * percent);
 
                     _updateAllElements();
+                }).on("touchend mouseup", function(ev) {
+                    shouldIndicatorAnimate = true;
                 });
 
                 elements.sliders.green.parent().on("touchstart mousedown", function(ev) {
+                    shouldIndicatorAnimate = false;
                     ev.preventDefault();
 
                     if (ev.which > 1) {
@@ -610,9 +628,12 @@
                     _updateColorsProperty('rgba', 'g', 2.55 * percent);
 
                     _updateAllElements();
+                }).on("touchend mouseup", function(ev) {
+                    shouldIndicatorAnimate = true;
                 });
 
                 elements.sliders.blue.parent().on("touchstart mousedown", function(ev) {
+                    shouldIndicatorAnimate = false;
                     ev.preventDefault();
 
                     if (ev.which > 1) {
@@ -626,6 +647,8 @@
                     _updateColorsProperty('rgba', 'b', 2.55 * percent);
 
                     _updateAllElements();
+                }).on("touchend mouseup", function(ev) {
+                    shouldIndicatorAnimate = true;
                 });
 
                 elements.sliders.cielightness.parent().on("touchstart mousedown", function(ev) {
