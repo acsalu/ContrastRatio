@@ -133,6 +133,9 @@ $(function() {
        hasSetColorPickerInsideUpdateView = true;
        setupColorPicker();
      }  
+
+     // RULER
+     updateRulerValuePosition();
    }
 
    function setupColorPicker() {
@@ -308,6 +311,55 @@ $(function() {
       $btnAddColor.hide();
       $btnDelColor.show();
    });
+
+  var $rulerReadabilityComponents = $rulerReadability.find('.ruler-component');
+  var $rulerHierachyComponents = $rulerHierachy.find('.ruler-component');
+
+  function getAnchorPoints($components) {
+    var anchorPoints = [];
+    for (var i = 0; i < $components.length; ++i) {
+      var left = $($components[i]).position().left;
+
+      // include right position for the last component
+      if (anchorPoints.push(left) == $components.length) {
+        var right = left + $($components[i]).width();
+        anchorPoints.push(right);
+      }
+    }
+
+    return anchorPoints;
+  }
+
+  function setRulerValuePosition($ruler,anchorPoints) {
+    $ruler.find('.ruler-sample-values > span').each(function(i) {
+      var width = $(this).width();
+      var left = anchorPoints[i] - $ruler.position().left - (2 * i + 1) * width / 2;
+      $(this).css('left', left + "px");
+    });
+  }
+
+  function updateRulerValuePosition() {
+
+    if (isGray()) {
+      // hierachy
+      var hierachyAnchorPoints = getAnchorPoints($rulerHierachyComponents);
+      setRulerValuePosition($rulerHierachy, hierachyAnchorPoints);
+
+    } else {
+      // readability
+      var readabilityAnchorPoints = getAnchorPoints($rulerReadabilityComponents);
+      setRulerValuePosition($rulerReadability, readabilityAnchorPoints);
+    }
+
+  }
+
+  function isGray() {
+    return $inputForeground.val().isGray() && $inputBackground.val().isGray();
+  }
+
+  $(window).resize(function() {
+    updateRulerValuePosition();
+  });
 
   updateView();
 });

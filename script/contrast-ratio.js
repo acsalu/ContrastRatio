@@ -16,13 +16,9 @@ function rgb2gray(hexString) {
 }
 
 String.prototype.isGray = function() {
-
-  console.log("Is gray? " + this);
   var r = this.substr(0, 2);
   var g = this.substr(2, 2);
   var b = this.substr(4, 2);
-
-  console.log(r + " " + g + " " + b);
 
   return (r == g && g == b && b == r);
 };
