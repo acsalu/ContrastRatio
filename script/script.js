@@ -20,6 +20,7 @@ $(function() {
    var $tools = $('.tools');
 
    var $rulerHierachy = $('#ruler-hierachy');
+   var $rulerIndicatorHierachy = $('#ruler-indicator-hierachy');
    var $rulerReadibility = $('#ruler-readiblity');
 
    var $hierachyGroup = $('.hierachy');
@@ -87,6 +88,7 @@ $(function() {
      $colorRatio.html(colorRatio.toFixed(1));
      $grayRatio.html(grayRatio.toFixed(1));
      var summary;
+     var rulerIndicatorPosition = 0;
      
 
      if (isGray) {
@@ -94,6 +96,7 @@ $(function() {
        $readabilityGroup.hide();
        $hierachyGroup.show();
        summary = getHierachySummary(grayRatio);
+       rulerIndicatorPosition = getHierachyIndicatorPosition(grayRatio);
      } else {
        $('#header-gray').show();
        $readabilityGroup.show();
@@ -101,10 +104,20 @@ $(function() {
        summary = getReadabilitySummary(grayRatio);
      }
 
+     console.log("indicator " + rulerIndicatorPosition);
 
      $summaryText.html(summary['text']);
      $summaryText.css('color', summary['color']);
      $summaryRatio.css('color', summary['color']);
+
+
+     var rulerIndicatorPositionPixel = $('.ruler').width() * rulerIndicatorPosition - $rulerIndicatorHierachy.width() / 2;
+     $rulerIndicatorHierachy.animate({
+         left: rulerIndicatorPositionPixel
+       }, animateDuration, function() {
+         // isColorPickerPanelOpened = true;
+         // isColorPickerPanelExpanding = false;
+       });
 
      // color picker
      if (isColorPickerPanelOpened && currentModifyColorInput && !hasSetColorPickerInsideUpdateView) {

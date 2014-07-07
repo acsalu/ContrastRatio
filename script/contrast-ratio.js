@@ -141,5 +141,25 @@ function getHierachySummary(ratio) {
   summary['color'] = color;
 
   return summary;
+}
 
+function getHierachyIndicatorPosition(ratio) {
+
+  var leftPosition = 0;
+  // 28, 13.5, 23.5, 35
+  if (ratio < 2.0) {
+    leftPosition = 28 * (ratio - 0.0) / 2.0;
+  } else if (ratio < 3.0) {
+    leftPosition = 28 + 13.5 * (ratio - 2.0) / 1.0;
+  } else if (ratio < 7.0) {
+    leftPosition = 41.5 + 23.5 * (ratio - 3.0) / 4.0;
+  } else {
+    leftPosition = 65 + 35 * (ratio - 7.0) / 14.0;
+  }
+
+  return leftPosition / 100;
+}
+
+function getReadabilityIndicatorPosition(ratio) {
+  return "30%";
 }

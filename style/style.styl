@@ -319,20 +319,47 @@ rulerColorGreen = #369800
     font-size 15px
   }
 
-  .ruler {
-    margin 10px 0 10px 0
-    width 100%
-    height rulerHeight
-    display block
+  .ruler-container {
+    .ruler-indicator {
+      width 20px
+      position relative
 
-    .ruler-component {
-      display inline-block
+
+      .ruler-indicator-text {
+        font-family HelveticaNeue-Medium
+        font-size 15px
+        margin 0px auto
+      }
+      .ruler-indicator-circle {
+        height 8px
+        width 8px
+        border-radius 100%
+        background-color black
+        margin 0px auto
+      }
+      .ruler-indicator-bar {
+        width 2px
+        height 5px
+        background-color black
+        margin 0px auto
+      }
+    }
+
+    .ruler {
+      margin -1px 0 10px 0
+      width 100%
       height rulerHeight
-      color white
-      font-family HelveticaNeue-Medium
-      font-size 12px
-      line-height rulerHeight
-      text-align center
+      display block
+
+      .ruler-component {
+        display inline-block
+        height rulerHeight
+        color white
+        font-family HelveticaNeue-Medium
+        font-size 12px
+        line-height rulerHeight
+        text-align center
+      }
     }
   }
 

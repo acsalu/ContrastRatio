@@ -79,17 +79,23 @@ html(lang="en")
       #rulers.container.tools
         #ruler-hierachy.hierachy
           .ruler-title Hierachy
-          .ruler
-            #ruler-hierachy-disable.ruler-component Disable
-            #ruler-hierachy-level1.ruler-component Level 1
-            #ruler-hierachy-level2.ruler-component Level 2
-            #ruler-hierachy-level3.ruler-component Level 3
+          .ruler-container
+            #ruler-indicator-hierachy.ruler-indicator
+              .ruler-indicator-text.gray-ratio
+              .ruler-indicator-circle
+              .ruler-indicator-bar
+            .ruler
+              #ruler-hierachy-disable.ruler-component Disable
+              #ruler-hierachy-level1.ruler-component Level 1
+              #ruler-hierachy-level2.ruler-component Level 2
+              #ruler-hierachy-level3.ruler-component Level 3
         #ruler-readability.readability
           .ruler-title Readability
-          .ruler
-            #ruler-readability-disable.ruler-component Disable
-            #ruler-readability-low.ruler-component Low
-            #ruler-readability-high.ruler-component High Readability
+          .ruler-container
+            .ruler
+              #ruler-readability-disable.ruler-component Disable
+              #ruler-readability-low.ruler-component Low
+              #ruler-readability-high.ruler-component High Readability
 
       #color-picker-panel.action
         #color-picker.action.container.tools
