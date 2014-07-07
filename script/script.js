@@ -39,6 +39,8 @@ $(function() {
    var hasSelectFavColor = false;
    var hasSetColorPickerInsideUpdateView = false;
 
+   var currentRatio;
+
    function updateView() {
 
      var foregroundColorHex = $inputForeground.val();
@@ -113,6 +115,8 @@ $(function() {
      $summaryText.css('color', summary['color']);
      $summaryRatio.css('color', summary['color']);
 
+
+     currentRatio = grayRatio;
 
      // console.log("ruler " + $rulerReadability.width());
      // console.log("indicator " + rulerIndicatorPosition);
@@ -342,7 +346,25 @@ $(function() {
       var readabilityAnchorPoints = getAnchorPoints($rulerReadabilityComponents);
       setRulerValuePosition($rulerReadability, readabilityAnchorPoints);
     }
+  }
 
+  function updateColorIndicatorPosition() {
+
+    var $rulerIndicator;
+    var $ruler;
+
+    if (isGray()) {
+      $ruler = $rulerHierachy;
+      $rulerIndicator = $rulerIndicatorHierachy;
+    } else {
+      $ruler = $rulerReadability;
+      $rulerIndicator = $rulerIndicatorReadability;
+    }
+
+    var rulerIndicatorPosition = getReadabilityIndicatorPosition(currentRatio);
+    var rulerIndicatorPositionPixel = $ruler.width() * rulerIndicatorPosition - $rulerIndicator.width() / 2;
+
+    $rulerIndicator.css('left', rulerIndicatorPositionPixel);
   }
 
   function isGray() {
@@ -351,6 +373,7 @@ $(function() {
 
   $(window).resize(function() {
     updateRulerValuePosition();
+    updateColorIndicatorPosition();
   });
 
   updateView();
