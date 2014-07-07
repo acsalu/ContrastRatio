@@ -40,9 +40,6 @@ $(function() {
    var hasSetColorPickerInsideUpdateView = false;
 
    function updateView() {
-     console.log("[update appearance]");
-
-
 
      var foregroundColorHex = $inputForeground.val();
      var backgroundColorHex = $inputBackground.val();
@@ -52,7 +49,6 @@ $(function() {
 
      // check if both grayscale
      var isGray = foregroundColorHex.isGray() && backgroundColorHex.isGray();
-     console.log(isGray);
 
      // update appearance
      var foregroundColorCSS = "#" + foregroundColorHex;
@@ -60,10 +56,10 @@ $(function() {
      var foregroundGrayCSS = "#" + foregroundGrayHex;
      var backgroundGrayCSS = "#" + backgroundGrayHex;
 
-     console.log("foreground color:" + foregroundColorCSS);
-     console.log("background color:" + backgroundColorCSS);
-     console.log("foreground gray:" + foregroundGrayCSS);
-     console.log("background gray:" + backgroundGrayCSS);
+     // console.log("foreground color:" + foregroundColorCSS);
+     // console.log("background color:" + backgroundColorCSS);
+     // console.log("foreground gray:" + foregroundGrayCSS);
+     // console.log("background gray:" + backgroundGrayCSS);
 
      $swatchColorForeground.css('background-color', foregroundColorCSS);
      $swatchColorBackground.css('background-color', backgroundColorCSS);
@@ -79,8 +75,8 @@ $(function() {
      var backgroundColorL = getL(backgroundColorHex);
      var colorRatio = contrastRatio(foregroundColorL, backgroundColorL);
 
-     console.log("foregroundColorL" + foregroundColorL);
-     console.log("backgroundColorL" + backgroundColorL);
+     // console.log("foregroundColorL" + foregroundColorL);
+     // console.log("backgroundColorL" + backgroundColorL);
 
      var foregroundGrayL = getL(foregroundGrayHex);
      var backgroundGrayL = getL(backgroundGrayHex);
@@ -118,9 +114,9 @@ $(function() {
      $summaryRatio.css('color', summary['color']);
 
 
-     console.log("ruler " + $rulerReadability.width());
-     console.log("indicator " + rulerIndicatorPosition);
-     console.log("indicator " + rulerIndicatorPositionPixel);
+     // console.log("ruler " + $rulerReadability.width());
+     // console.log("indicator " + rulerIndicatorPosition);
+     // console.log("indicator " + rulerIndicatorPositionPixel);
      $rulerIndicator.animate({
          left: rulerIndicatorPositionPixel
        }, animateDuration, function() {
@@ -148,7 +144,6 @@ $(function() {
           rgb: 1,
           hsl: 2
         }, onchange: function(container, color) {
-          console.log("picker change");
           if (currentModifyColorInput) {
             currentModifyColorInput.val(color.tiny.toHex());
             updateView();
@@ -159,9 +154,7 @@ $(function() {
 
    $('.hex-code-input').on('keyup', function(e) {
      var len = $(this).val().length;
-     console.log(len);
      if (len == 6) {
-        console.log("Change color to " + $(this).val());
         if (hasSelectFavColor) {
           hasSelectFavColor = false;
           $btnAddColor.show();
@@ -228,7 +221,6 @@ $(function() {
 
     $('body > [class!="action"]').click(function(event) {
       var $target = $(event.target);
-      console.log($target);
 
       if (!$target.hasClass("action") && isColorPickerPanelOpened) {
           closeColorPickerPanel();
