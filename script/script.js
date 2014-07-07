@@ -21,7 +21,8 @@ $(function() {
 
    var $rulerHierachy = $('#ruler-hierachy');
    var $rulerIndicatorHierachy = $('#ruler-indicator-hierachy');
-   var $rulerReadibility = $('#ruler-readiblity');
+   var $rulerReadability = $('#ruler-readability');
+   var $rulerIndicatorReadability = $('#ruler-indicator-readability');
 
    var $hierachyGroup = $('.hierachy');
    var $readabilityGroup = $('.readability');
@@ -88,31 +89,39 @@ $(function() {
      $colorRatio.html(colorRatio.toFixed(1));
      $grayRatio.html(grayRatio.toFixed(1));
      var summary;
+     var $rulerIndicator;
      var rulerIndicatorPosition = 0;
-     
+     var rulerIndicatorPositionPixel = 0;
 
      if (isGray) {
        $('#header-gray').hide();
        $readabilityGroup.hide();
        $hierachyGroup.show();
        summary = getHierachySummary(grayRatio);
+       $rulerIndicator = $rulerIndicatorHierachy;
        rulerIndicatorPosition = getHierachyIndicatorPosition(grayRatio);
+       rulerIndicatorPositionPixel = $rulerHierachy.width() * rulerIndicatorPosition - $rulerIndicator.width() / 2;
      } else {
        $('#header-gray').show();
        $readabilityGroup.show();
        $hierachyGroup.hide();
        summary = getReadabilitySummary(grayRatio);
+       $rulerIndicator = $rulerIndicatorReadability;
+       rulerIndicatorPosition = getReadabilityIndicatorPosition(grayRatio);
+       rulerIndicatorPositionPixel = $rulerReadability.width() * rulerIndicatorPosition - $rulerIndicator.width() / 2;
      }
 
-     console.log("indicator " + rulerIndicatorPosition);
+     
 
      $summaryText.html(summary['text']);
      $summaryText.css('color', summary['color']);
      $summaryRatio.css('color', summary['color']);
 
 
-     var rulerIndicatorPositionPixel = $('.ruler').width() * rulerIndicatorPosition - $rulerIndicatorHierachy.width() / 2;
-     $rulerIndicatorHierachy.animate({
+     console.log("ruler " + $rulerReadability.width());
+     console.log("indicator " + rulerIndicatorPosition);
+     console.log("indicator " + rulerIndicatorPositionPixel);
+     $rulerIndicator.animate({
          left: rulerIndicatorPositionPixel
        }, animateDuration, function() {
          // isColorPickerPanelOpened = true;

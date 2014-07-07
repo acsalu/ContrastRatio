@@ -148,7 +148,7 @@ function getHierachyIndicatorPosition(ratio) {
   var leftPosition = 0;
   // 28, 13.5, 23.5, 35
   if (ratio < 2.0) {
-    leftPosition = 28 * (ratio - 0.0) / 2.0;
+    leftPosition = 0 + 28 * (ratio - 0.0) / 2.0;
   } else if (ratio < 3.0) {
     leftPosition = 28 + 13.5 * (ratio - 2.0) / 1.0;
   } else if (ratio < 7.0) {
@@ -161,5 +161,17 @@ function getHierachyIndicatorPosition(ratio) {
 }
 
 function getReadabilityIndicatorPosition(ratio) {
-  return "30%";
+  
+  var leftPosition = 0;
+  // 28, 7, 65
+  if (ratio < 2.0) {
+    leftPosition = 0 + 28 * (ratio - 0.0) / 2.0;
+  } else if (ratio < 2.5) {
+    leftPosition = 28 + 7 * (ratio - 2.0) / 0.5;
+  } else {
+    leftPosition = 35 + 65 * (ratio - 2.5) / 18.5;
+  }
+
+  return leftPosition / 100;
+
 }
