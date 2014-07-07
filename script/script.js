@@ -1,6 +1,6 @@
 var isToolsShown = true;
-var defaultForeground = "FFFFFF";
-var defaultBackground = "000000";
+var defaultForeground = "f7d028";
+var defaultBackground = "43cdee";
 
 $(function() {
 
