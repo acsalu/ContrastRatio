@@ -220,9 +220,10 @@ $(function() {
    };
 
     $('.circle').click(function() {
+      console.log('hi');
       $('.circle').removeClass('circle-selected');
       $(this).addClass('circle-selected');
-      currentModifyColorInput = $(this).siblings('.input-wrapper').find('input');
+      currentModifyColorInput = $(this).parent().siblings('.input-wrapper').find('input');
       updateView();
       setupColorPicker();
       openColorPickerPanel();

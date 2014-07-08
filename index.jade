@@ -19,7 +19,7 @@ html(lang="en")
     header
       .container
         #header-ratio.header-block
-          span.contrast-ratio-textContrast Contrast Ratio
+          span.contrast-ratio-textContrast Contrast Ratio 
           span.mobile-hide = 
           span.gray-ratio.mobile-hide 21.0
         #header-color.header-block.readability
@@ -46,13 +46,15 @@ html(lang="en")
             .input-wrapper
               span #
               input#input-foreground.hex-code-input.action(type="text", value="f7d028")
-            .circle.color-foreground.action.action-click
+            .circle-wrapper.action.action-click
+              .circle.color-foreground.action.action-click
             .input-title Foreground
           .color-input.float-wrapper
             .input-wrapper
               span #
               input#input-background.hex-code-input.action(type="text", value="43cdee")
-            .circle.color-background.action.action-click
+            .circle-wrapper.action.action-click
+              .circle.color-background.action.action-click
             .input-title Background
             
 
