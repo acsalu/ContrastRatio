@@ -145,6 +145,7 @@ content {
   text-align: right;
   font-family: Menlo, monospace;
   font-size: 15px;
+  line-height: 15px;
   background-color: transparent;
   width: 60px;
 }
@@ -192,7 +193,7 @@ content {
   width: 20px;
 }
 #preview #fav-panel {
-  width: 150px;
+  width: 250px;
   height: 20px;
   margin: 0px auto;
 }
@@ -220,11 +221,12 @@ content {
   padding-top: 2px;
 }
 #preview #fav-panel #fav-colors {
+  margin: 0px auto;
   margin-top: 10px;
 }
 #preview #fav-panel #fav-colors .color {
   display: inline-block;
-  margin: 0px 5px 0px 5px;
+  margin: 0px 15px 0px 15px;
 }
 #contrast-ruler {
   width: 100%;
