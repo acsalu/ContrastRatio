@@ -155,6 +155,8 @@ $(function() {
         }, onchange: function(container, color) {
           if (currentModifyColorInput) {
             currentModifyColorInput.val(color.tiny.toHex());
+            $btnAddColor.show();
+            $btnDelColor.hide();
             updateView();
           }
         }
