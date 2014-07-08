@@ -116,10 +116,15 @@ linear-gradient()
   -moz-linear-gradient arguments
   -o-linear-gradient arguments
 
-.circle
+.circle {
   height (circleRadius)*2
   width (circleRadius)*2
-  border-radius (circleRadius)
+  border-radius 100%
+}
+
+.circle-selected {
+  border 1px solid black
+}
 
 .semicircle-upper
   background-color black
@@ -174,7 +179,7 @@ textInputOffset = 1px
   }
 
   .circle {
-    margin 0px 30px 0px 30px
+    margin 0px 10px 0px 30px
   }
 
   .input-wrapper {
@@ -458,6 +463,7 @@ circleRadiusMobile = 20px
     border-radius 100%
     border 1px solid black
   }
+
   .input-wrapper {
     display none
   }

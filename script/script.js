@@ -220,6 +220,8 @@ $(function() {
    };
 
     $('.circle').click(function() {
+      $('.circle').removeClass('circle-selected');
+      $(this).addClass('circle-selected');
       currentModifyColorInput = $(this).siblings('.input-wrapper').find('input');
       updateView();
       setupColorPicker();
@@ -233,6 +235,7 @@ $(function() {
 
       if (!$target.hasClass("action") && isColorPickerPanelOpened) {
           closeColorPickerPanel();
+          $('.circle').removeClass('circle-selected');
       }
     });
 
