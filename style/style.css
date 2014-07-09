@@ -216,6 +216,10 @@ content {
 #preview #fav-panel #btn-add-color > i {
   padding-top: 3px;
 }
+#preview #fav-panel .btn-disable {
+  border: 1px solid #ececec;
+  color: #ececec;
+}
 #preview #fav-panel #btn-delete-color {
   border: 1px solid #f00;
 }

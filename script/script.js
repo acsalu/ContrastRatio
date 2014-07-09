@@ -297,6 +297,10 @@ $(function() {
 
     console.log("Add " + foregroundColor + "/" + backgroundColor + " to fav.");
     addFavColor(foregroundColor, backgroundColor);
+    if (favColors.length == favColorsLimit) {
+      $(this).addClass('btn-disable');
+    }
+
    });
 
    $btnDelColor.click(function() {
@@ -307,6 +311,10 @@ $(function() {
       $btnDelColor.hide();
       currentSelectIdx = -1;
       hasSelectFavColor = false;
+
+      if (favColors.length < favColorsLimit) {
+        $btnAddColor.removeClass('btn-disable');
+      }
    });
 
    $(document).on('click', "#fav-colors>.color", function() {
