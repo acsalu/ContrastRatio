@@ -11,6 +11,7 @@ body {
   cursor: hand;
 }
 header .header-block {
+  float: left;
   display: inline-block;
   margin-right: 50px;
   height: 30px;
@@ -38,21 +39,18 @@ header #header-title {
   font-size: 20px;
 }
 header #header-color > * {
-  display: inline-block;
-}
-header #header-color #header-color-text {
-  margin-top: -5px;
+  float: left;
 }
 header #header-color .header-text {
-  display: inline-block;
+  float: left;
   margin: 0px 5px 0px 5px;
   height: 20px;
   line-height: 20px;
 }
-header #header-color .color {
-  margin-top: 0px;
+header .container:after {
+  clear: both;
 }
-header #toggle-tools-btn {
+#toggle-tools-btn {
   float: right;
   margin-top: 30px;
   padding: 10px;
@@ -117,6 +115,7 @@ content {
   border: 0px;
 }
 #input-group {
+  margin-top: 80px;
   display: block;
   padding: 4px;
 }
@@ -183,7 +182,6 @@ content {
   padding: 10px 15px 15px 10px;
   margin: 0 auto;
   margin-top: 20px;
-  resize: horizontal;
   font-family: HelveticaNeue-Light;
   font-size: 15px;
 }
@@ -344,6 +342,11 @@ content {
 }
 #color-picker-panel #cp-slider-group-hsl {
   float: right;
+}
+#test-jqueryui {
+  height: 100px;
+  width: 100px;
+  background-color: #f00;
 }
 @media screen and (max-width: 540px) {
   .circle {

@@ -34,7 +34,6 @@ $(function() {
    var $colorPickerPanel = $('#color-picker-panel');
    var $colorPicker = $('#color-picker');
 
-   $textPreview.resizable();
    $concise.hide();
    var hasSelectFavColor = false;
    var hasSetColorPickerInsideUpdateView = false;
@@ -386,6 +385,8 @@ $(function() {
     updateRulerValuePosition();
     updateColorIndicatorPosition();
   });
+
+  // $textPreview.resizable();
 
   updateView();
 });

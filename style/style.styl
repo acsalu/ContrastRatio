@@ -17,6 +17,7 @@ body
 
 header {
   .header-block {
+    float left
     display inline-block
     margin-right 50px
     height 30px
@@ -51,50 +52,36 @@ header {
   }
 
   #header-color > * {
-    display inline-block
+    float left
   }
 
   #header-color {
-    #header-color-text {
-      margin-top -5px
-    }
-
     .header-text {
-      display inline-block
+      float left
       margin 0px 5px 0px 5px
       height circleRadius*2
       line-height circleRadius*2
     }
-  }
 
-  #header-color .color {
-    margin-top 0px
-    // margin-left headerColorMargin
-  }
-
-  #header-gray .color {
-    // margin-right headerColorMargin
-  }
-
-  toggleToolsColor = #a2a2a2
-  #toggle-tools-btn {
-    float right
-    margin-top 30px
-    padding 10px
-    border 1px solid toggleToolsColor
-    text-align center
-    width 80px
-    font-family HelveticaNeue-Medium
-    font-size 13px
-    color toggleToolsColor
-  }
-
-  after() {
-    clear both
   }
 }
 
+header .container:after {
+  clear both
+}
 
+toggleToolsColor = #a2a2a2
+#toggle-tools-btn {
+  float right
+  margin-top 30px
+  padding 10px
+  border 1px solid toggleToolsColor
+  text-align center
+  width 80px
+  font-family HelveticaNeue-Medium
+  font-size 13px
+  color toggleToolsColor
+}
 
 content {
   padding-top 20px
@@ -168,6 +155,10 @@ ratioDividerHeight = 2px
 textInputOffset = 1px
 
 #input-group {
+
+
+  margin-top 80px
+
   display block
   // height colorInputHeight*2+ratioDividerHeight
   // width colorInputWidth
@@ -257,7 +248,6 @@ textInputOffset = 1px
     padding 10px 15px 15px 10px
     margin 0 auto
     margin-top 20px
-    resize horizontal
     font-family HelveticaNeue-Light
     font-size 15px
   }
@@ -463,6 +453,11 @@ colorPickerWidth=400px
 
 }
 
+#test-jqueryui
+  height 100px
+  width 100px
+  background-color red
+
 circleRadiusMobile = 20px
 
 @media screen and (max-width: 540px) {
@@ -510,3 +505,5 @@ circleRadiusMobile = 20px
 
 
 }
+
+
