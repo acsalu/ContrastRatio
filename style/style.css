@@ -115,7 +115,7 @@ content {
   border: 0px;
 }
 #input-group {
-  margin-top: 80px;
+  margin-top: 50px;
   display: block;
   padding: 4px;
 }
@@ -179,7 +179,7 @@ content {
   min-width: 100px;
   max-width: 100%;
   min-height: 20px;
-  width: 150px;
+  width: 250px;
   padding: 10px 15px 15px 10px;
   margin: 0 auto;
   margin-top: 20px;
@@ -199,7 +199,7 @@ content {
 #preview #fav-panel #btns {
   width: 22px;
   margin: 0px auto;
-  margin-top: 10px;
+  margin-top: 18px;
 }
 #preview #fav-panel .btn-circle {
   display: inline-block;
@@ -221,7 +221,7 @@ content {
 }
 #preview #fav-panel #fav-colors {
   margin: 0px auto;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 #preview #fav-panel #fav-colors .color {
   display: inline-block;
@@ -233,7 +233,7 @@ content {
   background: linear-gradient left #fff 0% #000 100%;
 }
 #rulers {
-  margin-top: 20px;
+  margin-top: 150px;
 }
 #rulers .ruler-title {
   font-family: HelveticaNeue-Medium;
