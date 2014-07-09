@@ -216,7 +216,11 @@ content {
 #preview #fav-panel #btn-add-color > i {
   padding-top: 3px;
 }
-#preview #fav-panel #btn-delete-color > i {
+#preview #fav-panel #btn-delete-color {
+  border: 1px solid #f00;
+}
+#preview #fav-panel #btn-delete-color i {
+  color: #f00;
   padding-top: 2px;
 }
 #preview #fav-panel #fav-colors {
