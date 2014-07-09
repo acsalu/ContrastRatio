@@ -131,9 +131,6 @@ linear-gradient()
   width circleRadius*2
   border-radius 0 0 circleRadius*2 circleRadius*2
 
-#content
-  margin-top 100px
-
 .color-input-group {
   height colorInputHeight
   background white
@@ -156,17 +153,16 @@ textInputOffset = 1px
 
 #input-group {
 
-
-  margin-top 50px
-
+  margin-top 70px
   display block
-  // height colorInputHeight*2+ratioDividerHeight
-  // width colorInputWidth
-  padding 4px
+  
+
   .color-input {
     // display inline-block
     height colorInputHeight
     padding-top 4px
+    margin-bottom 6px
+    margin-left -18px
   }
 
   .input-title {
@@ -493,6 +489,10 @@ circleRadiusMobile = 20px
 
   .color-input {
     display inline-block
+  }
+
+  .color-input:nth-child(1) {
+    margin-bottom 20px
   }
 
   .cp-slider-group {

@@ -99,9 +99,6 @@ content {
   -moz-border-radius: 0 0 20px 20px;
   border-radius: 0 0 20px 20px;
 }
-#content {
-  margin-top: 100px;
-}
 .color-input-group {
   height: 20px;
   background: #fff;
@@ -115,13 +112,14 @@ content {
   border: 0px;
 }
 #input-group {
-  margin-top: 50px;
+  margin-top: 70px;
   display: block;
-  padding: 4px;
 }
 #input-group .color-input {
   height: 36px;
   padding-top: 4px;
+  margin-bottom: 6px;
+  margin-left: -18px;
 }
 #input-group .input-title {
   font-family: HelveticaNeue-Medium;
@@ -377,6 +375,9 @@ content {
   }
   .color-input {
     display: inline-block;
+  }
+  .color-input:nth-child(1) {
+    margin-bottom: 20px;
   }
   .cp-slider-group {
     display: block;
