@@ -132,7 +132,7 @@ content {
   margin: 0px 15px 0px 30px;
 }
 #input-group .input-wrapper {
-  height: 20px;
+  height: 25px;
   border-bottom: 1px solid #000;
 }
 #input-group .input-wrapper span {
@@ -140,6 +140,7 @@ content {
   font-size: 15px;
 }
 #input-group .input-wrapper .hex-code-input {
+  margin-top: -2px;
   border: none;
   text-align: right;
   font-family: Menlo, monospace;
