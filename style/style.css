@@ -177,6 +177,8 @@ content {
   min-width: 100px;
   max-width: 100%;
   min-height: 20px;
+  max-height: 120px;
+  overflow: scroll;
   width: 250px;
   padding: 10px 15px 15px 10px;
   margin: 0 auto;
@@ -247,7 +249,10 @@ content {
   background: linear-gradient left #fff 0% #000 100%;
 }
 #rulers {
-  margin-top: 150px;
+  position: absolute;
+  bottom: 100px;
+  margin: 0px auto;
+  width: 100%;
 }
 #rulers .ruler-title {
   font-family: HelveticaNeue-Medium;
@@ -333,7 +338,7 @@ content {
 #color-picker-panel {
   position: absolute;
   bottom: -220px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.85);
   width: 100%;
   height: 220px;
   z-index: 100;
