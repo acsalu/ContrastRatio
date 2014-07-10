@@ -147,6 +147,12 @@ content {
   background-color: transparent;
   width: 60px;
 }
+#input-group .description {
+  margin-top: -10px;
+  font-family: HelveticaNeue-Light;
+  font-size: 12px;
+  color: #9f9f9f;
+}
 .float-wrapper {
   width: 225px;
   height: fit-content;
