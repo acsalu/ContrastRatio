@@ -156,6 +156,7 @@ $(function() {
             currentModifyColorInput.val(color.tiny.toHex());
             $btnAddColor.show();
             $btnDelColor.hide();
+            $('#fav-colors>.color').removeClass('fav-color-selected');
             updateView();
           }
         }
@@ -167,6 +168,7 @@ $(function() {
      if (len == 6) {
         if (hasSelectFavColor) {
           hasSelectFavColor = false;
+          $('#fav-colors>.color').removeClass('fav-color-selected');
           $btnAddColor.show();
           $btnDelColor.hide();
         }
@@ -324,6 +326,9 @@ $(function() {
       hasSelectFavColor = true;
       $btnAddColor.hide();
       $btnDelColor.show();
+
+      $('#fav-colors>.color').removeClass('fav-color-selected')
+      $(this).addClass('fav-color-selected');
    });
 
   var $rulerReadabilityComponents = $rulerReadability.find('.ruler-component');

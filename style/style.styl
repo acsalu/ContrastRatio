@@ -125,6 +125,8 @@ linear-gradient()
   width circleRadius*2
   border-radius circleRadius*2 circleRadius*2 0 0
 
+
+
 .semicircle-lower
   background-color red
   height circleRadius
@@ -256,7 +258,7 @@ textInputOffset = 1px
   }
 
   #fav-panel {
-    width ((circleRadius)*2) * 5 + 10*15
+    width ((circleRadius)*2 + 4) * 5 + 10*15
     height circleRadius*2
     margin 0px auto
 
@@ -298,10 +300,17 @@ textInputOffset = 1px
     #fav-colors {
       margin 0px auto
       margin-top 30px
+      height 24px
 
       .color {
         display inline-block
         margin 0px 15px 0px 15px
+        padding 2px
+        border-radius 100%
+      }
+
+      .fav-color-selected {
+        background-color #d8d8d8
       }
     }
   }
