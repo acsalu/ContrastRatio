@@ -20,7 +20,7 @@ header .header-block {
   padding: 40px 0px 20px 0px;
 }
 header .header-block .header-contrast-title {
-  font-family: HelveticaNeue-CondensedBold;
+  font-family: HelveticaNeue-CondensedBold, sans-serif;
   font-size: 15px;
 }
 header .header-block .header-contrast-content > div {
@@ -28,13 +28,13 @@ header .header-block .header-contrast-content > div {
   height: 18px;
 }
 header .header-block .contrast-ratio-text {
-  font-family: HelveticaNeue-Bold;
+  font-family: HelveticaNeue-Bold, sans-serif;
 }
 header .contrast-title-color {
   color: #878787;
 }
 header #header-ratio {
-  font-family: HelveticaNeue-Bold;
+  font-family: HelveticaNeue-Bold, sans-serif;
   font-size: 21px;
 }
 header #header-title {
@@ -59,7 +59,7 @@ header .container:after {
   border: 1px solid #a2a2a2;
   text-align: center;
   width: 80px;
-  font-family: HelveticaNeue-Medium;
+  font-family: HelveticaNeue-Medium, sans-serif;
   font-size: 13px;
   color: #a2a2a2;
 }
@@ -124,7 +124,7 @@ content {
   margin-left: -18px;
 }
 #input-group .input-title {
-  font-family: HelveticaNeue-Medium;
+  font-family: HelveticaNeue-Medium, sans-serif;
   font-size: 13px;
   color: #979797;
 }
@@ -151,7 +151,7 @@ content {
 }
 #input-group .description {
   margin-top: -10px;
-  font-family: HelveticaNeue-Light;
+  font-family: HelveticaNeue-Light, sans-serif;
   font-size: 12px;
   color: #9f9f9f;
 }
@@ -191,7 +191,7 @@ content {
   padding: 10px 15px 15px 10px;
   margin: 0 auto;
   margin-top: 20px;
-  font-family: HelveticaNeue-Light;
+  font-family: HelveticaNeue-Light, sans-serif;
   font-size: 15px;
 }
 #preview #concise-mode {
@@ -261,7 +261,7 @@ content {
   width: 100%;
 }
 #rulers .ruler-title {
-  font-family: HelveticaNeue-Medium;
+  font-family: HelveticaNeue-Medium, sans-serif;
   font-size: 15px;
 }
 #rulers .ruler-container .ruler-indicator {
@@ -269,7 +269,7 @@ content {
   position: relative;
 }
 #rulers .ruler-container .ruler-indicator .ruler-indicator-text {
-  font-family: HelveticaNeue-Medium;
+  font-family: HelveticaNeue-Medium, sans-serif;
   font-size: 15px;
   margin: 0px auto;
 }
@@ -299,7 +299,7 @@ content {
   position: relative;
   height: 18px;
   color: #fff;
-  font-family: HelveticaNeue-Medium;
+  font-family: HelveticaNeue-Medium, sans-serif;
   font-size: 12px;
   line-height: 18px;
   text-align: center;
@@ -310,7 +310,7 @@ content {
   display: inline-block;
   width: 20px;
   text-align: center;
-  ont-family: HelveticaNeue-Medium;
+  ont-family: HelveticaNeue-Medium, sans-serif;
   font-size: 15px;
 }
 #rulers #ruler-hierachy #ruler-hierachy-disable {
