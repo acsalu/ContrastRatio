@@ -10,6 +10,8 @@ body
   margin 0 auto
   background-color #fafafc
   overflow hidden
+  min-width 1024px
+  min-height 768px
 
 .action-click
   cursor pointer 
@@ -342,9 +344,6 @@ rulerColorGreen = #369800
 
 
 #rulers {
-  // background-color red
-  position absolute
-  bottom 100px
   margin 0px auto
   width 100%
   .ruler-title {
@@ -489,54 +488,17 @@ colorPickerWidth=400px
 
 circleRadiusMobile = 20px
 
-@media screen and (max-width: 540px) {
-  .circle {
-    height (circleRadiusMobile)*2
-    width (circleRadiusMobile)*2
-    border-radius 100%
-    border 1px solid black
+@media screen and (max-height: 767px) {
+  #rulers {
+    margin-top 150px
   }
-
-  .input-wrapper {
-    display none
-  }
-  .float-wrapper > *{
-    float none
-
-  }
-
-  #input-group .circle {
-      margin 0px 00px 0px 0px
-  }
-
-  .color-input {
-    display inline-block
-  }
-
-  .color-input:nth-child(1) {
-    margin-bottom 20px
-  }
-
-  .cp-slider-group {
-    display block
-    width colorPickerWidth
-    margin 0px auto
-    padding 10px
-
-    .cp-slider {
-      margin 20px 0 20px 0 !important
-    }
-  }
-
-  #cp-slider-group-rgb {
-    float none !important
-  }
-
-  #cp-slider-group-hsl {
-    float none !important
-  }
-
 
 }
 
+@media screen and (min-height: 768px) {
+  #rulers {
+    position absolute
+    bottom 100px
+  }
+}
 
